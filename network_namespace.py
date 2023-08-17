@@ -49,8 +49,5 @@ if __name__ == "__main__":
     configure_interface_ip(namespace1, vethernet1, ip1)
     configure_interface_ip(namespace2, vethernet2, ip2)
 
-
-    # subprocess.run(['sudo', 'ip', 'netns', 'exec', namespace1, 'ping', '192.168.1.20'], check=True)
-
     subprocess.run(['sudo', 'ip', 'netns', 'exec', namespace1, 'ping', '192.168.1.20', '-c', '5'], check=True)
     subprocess.run(['sudo', 'ip', 'netns', 'exec', namespace2, 'ping', '192.168.1.10', '-c', '5'], check=True)
